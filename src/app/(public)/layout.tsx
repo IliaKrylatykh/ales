@@ -1,3 +1,4 @@
+import { AppFooter } from "@/widgets/app-footer/app-footer";
 import { AppHeader } from "@/widgets/app-header/app-header";
 
 export default async function Layout({
@@ -6,9 +7,12 @@ export default async function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
+    <section className="flex flex-col items-center min-h-screen">
       <AppHeader />
-      {children}
+      <div className="w-full max-w-[1024px] px-4 lg:px-0 mx-auto">
+        {children}
+      </div>
+      <AppFooter />
     </section>
   );
 }
