@@ -1,5 +1,4 @@
 import { ProductEntity } from "@/entities/product";
-import { ProductPreviewCard } from "./_ui/product-preview-card";
 import { ProductPreview } from "./_ui/product-preview";
 
 export function ProductList({ products }: { products: ProductEntity[] }) {

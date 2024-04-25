@@ -10,6 +10,7 @@ import {
 } from "@/shared/ui/sheet";
 import { ProductEntity } from "@/entities/product";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function ProductPreviewSheet({
   product,
@@ -78,8 +79,13 @@ export function ProductPreviewSheet({
             </button>
           ))}
         </div>
+        <Link className="mr-4" href={`/products/${product.id}`}>
+          <Button>View detailed information</Button>
+        </Link>
         <SheetClose asChild>
-          <Button onClick={() => onOpenChange(false)}>Close</Button>
+          <Button onClick={() => onOpenChange(false)} variant={"outline"}>
+            Close
+          </Button>
         </SheetClose>
       </SheetContent>
     </Sheet>

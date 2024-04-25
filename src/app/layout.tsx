@@ -5,8 +5,8 @@ import { cn } from "@/shared/ui/utils";
 import { AppProvider } from "./_providers/app-provider";
 
 export const metadata: Metadata = {
-  title: "Krylshop",
-  description: "Krylshop",
+  title: "Ales embroidery",
+  description: "Ales embroidery",
 };
 
 const fontSans = FontSans({

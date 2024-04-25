@@ -9,7 +9,7 @@ export default async function Layout({
   return (
     <section className="flex flex-col items-center min-h-screen">
       <AppHeader />
-      <div className="w-full max-w-[1024px] px-4 lg:px-0 mx-auto">
+      <div className="w-full flex-1 max-w-[1024px] px-4 lg:px-0 mx-auto">
         {children}
       </div>
       <AppFooter />
