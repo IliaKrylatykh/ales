@@ -15,7 +15,7 @@ export function ProductCarousel({ product }: { product: ProductEntity }) {
         <CarouselContent>
           {product.images.map((image, index) => {
             return (
-              <CarouselItem>
+              <CarouselItem key={image.src}>
                 <Image
                   src={image.src}
                   alt={`product image ${index}`}
