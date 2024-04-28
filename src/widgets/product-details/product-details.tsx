@@ -13,6 +13,7 @@ export function ProductDetails({ product }: { product: ProductEntity }) {
 
         <CardContent>
           <p>{product.description}</p>
+          <p>{product.description}</p>
         </CardContent>
 
         <CardFooter>
