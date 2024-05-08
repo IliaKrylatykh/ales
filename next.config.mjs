@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: {
     serverActions: {
-      allowedOrigins: ["localhost", "147.45.187.26"],
+      allowedOrigins: ["localhost", "147.45.187.26", "api.krylshop.ru"],
     },
   },
   rewrites: async () => {
@@ -14,7 +14,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["localhost", "147.45.187.26"],
+    domains: ["localhost", "147.45.187.26", "api.krylshop.ru"],
     remotePatterns: [
       {
         protocol: "http",

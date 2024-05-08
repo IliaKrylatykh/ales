@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://147.45.187.26/api",
+  baseURL: "https://api.krylshop.ru/api",
 });
 
 export default axiosInstance;
