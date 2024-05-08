@@ -3,8 +3,8 @@ import AboutBird from "@/shared/images/about-bird.jpg";
 
 export function Logo() {
   return (
-    <div>
-      <Image src={AboutBird} alt="about-bird-image" height={400} width={600} />
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <Image src={AboutBird} alt="about-bird-image" layout="responsive" />
     </div>
   );
 }

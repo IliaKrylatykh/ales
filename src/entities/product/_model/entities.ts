@@ -7,5 +7,11 @@ export type ProductEntity = {
   name: string;
   slug: string;
   description: string;
-  images: StaticImageData[];
+  images: string[];
+  quantity: number;
+  categoryIds: number[];
+  socialLinks: {
+    youtube?: string;
+    instagram?: string;
+  };
 };

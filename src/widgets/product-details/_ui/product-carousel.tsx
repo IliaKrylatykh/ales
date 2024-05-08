@@ -1,4 +1,7 @@
+"use client";
+
 import { ProductEntity } from "@/entities/product";
+import { getImageUrl } from "@/shared/lib/getImageUrl";
 import {
   Carousel,
   CarouselContent,
@@ -10,18 +13,18 @@ import Image from "next/image";
 
 export function ProductCarousel({ product }: { product: ProductEntity }) {
   return (
-    <div className="w-[400px]">
+    <div className="w-full max-w-[500px]">
       <Carousel opts={{ loop: true }}>
         <CarouselContent>
           {product.images.map((image, index) => {
             return (
-              <CarouselItem key={image.src}>
+              <CarouselItem key={index} className="relative h-full w-full">
                 <Image
-                  src={image.src}
+                  src={getImageUrl(image)}
                   alt={`product image ${index}`}
-                  width={400}
-                  height={400}
-                  objectFit="cover"
+                  layout="responsive"
+                  width={500}
+                  height={500}
                   className="transition-all hover:scale-105"
                 />
               </CarouselItem>

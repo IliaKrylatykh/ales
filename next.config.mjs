@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: {
     serverActions: {
-      allowedOrigins: ["localhost:3000", "picsum.photos"],
+      allowedOrigins: ["localhost", "147.45.187.26"],
     },
   },
   rewrites: async () => {
@@ -12,6 +12,16 @@ const nextConfig = {
         destination: "/src/shared/images/:path*",
       },
     ];
+  },
+  images: {
+    domains: ["localhost", "147.45.187.26"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "147.45.187.26",
+        pathname: "/api/**",
+      },
+    ],
   },
 };
 

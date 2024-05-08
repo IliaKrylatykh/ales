@@ -13,7 +13,7 @@ export function Layout({
 }) {
   return (
     <main>
-      <Card className="w-[600px] m-auto my-12 p-4">
+      <Card className="w-full max-w-[600px] m-auto my-12 p-4">
         <CardContent className="space-y-4">
           {header}
           {description}

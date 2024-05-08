@@ -1,20 +1,22 @@
 import Image from "next/image";
 import { ProductEntity } from "@/entities/product";
+import { getImageUrl } from "@/shared/lib/getImageUrl";
+import { useRouter } from "next/navigation";
 
-export function ProductPreviewCard({
-  product,
-  onOpenSheet,
-}: {
-  product: ProductEntity;
-  onOpenSheet: () => void;
-}) {
+export function ProductPreviewCard({ product }: { product: ProductEntity }) {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push(`/products/${product.id}`);
+  };
+
   return (
     <div
       className="relative overflow-hidden rounded-md flex-none w-full h-48 shadow-2xl cursor-pointer"
-      onClick={onOpenSheet}
+      onClick={handleNavigate}
     >
       <Image
-        src={product.images[0]}
+        src={getImageUrl(product.images[0])}
         alt={product.name}
         layout="fill"
         objectFit="cover"

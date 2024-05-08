@@ -2,7 +2,7 @@ import { Brush, Instagram, Youtube } from "lucide-react";
 
 export function Links() {
   return (
-    <div className={"flex text-slate-600 gap-8"}>
+    <div className={"flex flex-col sm:flex-row text-slate-600 gap-8"}>
       <div>
         <a
           href="https://www.instagram.com/krylbrooch"

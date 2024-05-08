@@ -1,2 +1,2 @@
-export { productsArray } from "./_model/constants";
+export { ProductService } from "./_api/product-service";
 export type { ProductEntity } from "./_model/entities";
