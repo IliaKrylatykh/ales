@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 type ProductId = string;
 
 export type ProductEntity = {
@@ -9,6 +7,7 @@ export type ProductEntity = {
   description: string;
   images: string[];
   quantity: number;
+  typeId: number;
   categoryIds: number[];
   socialLinks: {
     youtube?: string;

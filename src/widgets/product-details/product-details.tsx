@@ -7,6 +7,8 @@ import { Check } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { ProductService } from "@/entities/product";
+import { Badge } from "@/shared/ui/badge";
+import { Categories } from "@/entities/category";
 
 export function ProductDetails() {
   const { id } = useParams<{ id: string }>();
@@ -21,7 +23,7 @@ export function ProductDetails() {
     enabled: !!id,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (!product) return <div>Loading...</div>;
   if (error) return <div>An error occurred: {error.message}</div>;
 
   return (
@@ -32,7 +34,16 @@ export function ProductDetails() {
 
         <CardContent>
           <p>{product.description}</p>
-          <p>{product.description}</p>
+          <div className="flex mt-2 gap-2">
+            {product.categoryIds.map((categoryId) => {
+              const categoryName = Categories[categoryId];
+              return (
+                <Badge key={categoryId} variant="outline">
+                  {categoryName}
+                </Badge>
+              );
+            })}
+          </div>
         </CardContent>
 
         <CardFooter>
