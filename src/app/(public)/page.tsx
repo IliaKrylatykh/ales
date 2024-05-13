@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col p-8">
-      <ProductList products={data} />
+      <ProductList products={data || []} />
     </div>
   );
 }
