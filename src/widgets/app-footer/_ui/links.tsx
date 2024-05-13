@@ -3,6 +3,7 @@ import { Brush, Instagram, Youtube } from "lucide-react";
 export function Links() {
   return (
     <div className={"flex flex-col sm:flex-row text-slate-600 gap-8"}>
+      <span>Tbilisi, Georgia</span>
       <div>
         <a
           href="https://www.instagram.com/krylbrooch"

@@ -5,6 +5,7 @@ export type ProductEntity = {
   name: string;
   slug: string;
   description: string;
+  price: number;
   images: string[];
   quantity: number;
   typeId: number;
