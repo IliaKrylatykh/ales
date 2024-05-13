@@ -1,6 +1,7 @@
 "use client";
 
 import { ProductService } from "@/entities/product";
+import { Spinner } from "@/shared/ui/spinner";
 import { ProductList } from "@/widgets/product-list/product-list";
 import { useQuery } from "@tanstack/react-query";
 
@@ -11,7 +12,7 @@ export default function Home() {
     refetchOnWindowFocus: true,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner fontSize={40} fullPage />;
   if (error) return <div>An error occurred: {error.message}</div>;
 
   return (

@@ -9,6 +9,7 @@ import { useParams } from "next/navigation";
 import { ProductService } from "@/entities/product";
 import { Badge } from "@/shared/ui/badge";
 import { Categories } from "@/entities/category";
+import { Spinner } from "@/shared/ui/spinner";
 
 export function ProductDetails() {
   const { id } = useParams<{ id: string }>();
@@ -23,7 +24,7 @@ export function ProductDetails() {
     enabled: !!id,
   });
 
-  if (!product) return <div>Loading...</div>;
+  if (isLoading || !product) return <Spinner fontSize={40} fullPage />;
   if (error) return <div>An error occurred: {error.message}</div>;
 
   return (

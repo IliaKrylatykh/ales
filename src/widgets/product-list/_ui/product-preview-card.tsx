@@ -3,13 +3,14 @@ import { ProductEntity } from "@/entities/product";
 import { getCompressedImageUrl, getImageUrl } from "@/shared/lib/getImageUrl";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { getRoute } from "@/shared/lib/getRoute";
 
 export function ProductPreviewCard({ product }: { product: ProductEntity }) {
   const router = useRouter();
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
   const handleNavigate = () => {
-    router.push(`/products/${product.id}`);
+    router.push(getRoute.Product(product.id));
   };
 
   return (
@@ -18,18 +19,20 @@ export function ProductPreviewCard({ product }: { product: ProductEntity }) {
       onClick={handleNavigate}
     >
       <Image
-        src={
-          isImageLoaded
-            ? getImageUrl(product.images[0])
-            : getCompressedImageUrl(product.images[0])
-        }
+        src={getCompressedImageUrl(product.images[0])}
         alt={product.name}
-        layout="fill"
+        fill
         objectFit="cover"
-        className="transition-all hover:scale-105"
-        onLoad={() => setIsImageLoaded(true)}
+        className={`${isImageLoaded ? "opacity-0" : "opacity-100"}`}
       />
-
+      <Image
+        src={getImageUrl(product.images[0])}
+        alt={product.name}
+        fill
+        objectFit="cover"
+        onLoad={() => setIsImageLoaded(true)}
+        style={{ opacity: isImageLoaded ? 1 : 0 }}
+      />
       <div className="absolute top-0 left-0 p-4 bg-black bg-opacity-50">
         <p className="text-white">{product.name}</p>
       </div>
